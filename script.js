@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categories = ['learned', 'fuzzy', 'challenge', 'goal'];
   
     // ---------- 1. Carregar registros existentes ----------
-    fetch('/api/journal')               // em produção (Vercel), o front e o back costumam compartilhar domínio;
+    fetch('https://webjournal-backend.vercel.app/api/journal')               // em produção (Vercel), o front e o back costumam compartilhar domínio;
       .then(r => r.json())
       .then(entries => {
         entries.forEach(({ category, entry_text }) => addListItem(category, entry_text));
